@@ -14,6 +14,10 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+app.get("/status", (req: Request, res: Response) => {
+  res.send({message: "Status: OK"})
+})
+
 app.use("/api/users/user", userRoute);
 
 app.listen(3001, () => {
